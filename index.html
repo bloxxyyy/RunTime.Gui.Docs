@@ -1,148 +1,176 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
+<head>
+    <title>Runtime.Gui</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif
+        }
 
-<!-- w3-content defines a container for fixed size centered content, 
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+        /* Set the width of the sidebar to 120px */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px
+        }
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+    </style>
+</head>
+<body class="w3-black">
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>About</p>
+        </a>
+        <a href="#started" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>Getting Started</p>
+        </a>
+        <a href="#xml" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>XML</p>
+        </a>
+        <a href="#api" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>API</p>
+        </a>
+    </nav>
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1><b>MY BLOG</b></h1>
-  <p>Welcome to the blog of <span class="w3-tag">unknown</span></p>
-</header>
-
-<!-- Grid -->
-<div class="w3-row">
-
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
-    <div class="w3-container">
-      <h3><b>TITLE HEADING</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <a href="#started" class="w3-bar-item w3-button" style="width:25% !important">GETTING STARTED</a>
+            <a href="#xml" class="w3-bar-item w3-button" style="width:25% !important">XML</a>
+            <a href="#api" class="w3-bar-item w3-button" style="width:25% !important">API</a>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="about">
+            <h1 class="w3-jumbo"><span class="w3-hide-small"></span> RunTime.Gui</h1>
+            <p>Simple enough so a designer can make an Gui with a design that allows for programmers to create their own system.</p>
+            </header>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="started">
+            <h2 class="w3-text-light-grey">Getting Started</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <p>
+                The gui comes build in with a generator script which creates generated cs files which you can load in.
+                All the objects in these files add themselfs to the GUI on Init. You just have to tell it how you want it to run the files.
+            </p>
+
+            <h3 class="w3-text-light-grey">Reference the project</h3>
+
+            <ul>
+                <li>Add the Runtime.Gui to your monogame project as a reference</li>
+                <li>in powershell: dotnet tool install -g dotnet-script</li>
+                <li>Under: project.Properties > Output > Pre.Build.Event Add: dotnet script ..\BOC_Editor_GUI_System\Generation\Generator.csx</li>
+                <li>In your project add an: 'XML' & 'Generated' folder</li>
+                <li>Create an XML file in the XML folder and run</li>
+            </ul>
+            <!-- End About Section -->
         </div>
-      </div>
-    </div>
-  </div>
-  <hr>
 
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
-    <div class="w3-container">
-      <h3><b>BLOG ENTRY</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
-    </div>
+        <!-- xml Section -->
+        <div class="w3-padding-64 w3-content" id="xml">
+            <h2 class="w3-text-light-grey">XML Tags</h2>
+            <hr style="width:200px" class="w3-opacity">
 
-    <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+            <h3 class="w3-text-light-grey">Example XML file</h3>
+
+<pre style="background-color: ghostwhite">
+<code style="color: black">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;GUI&gt;
+    &lt;GridPanel Columns=&quot;2&quot; Margin=&quot;10&quot;&gt;
+
+        &lt;Panel IsDraggable=&quot;true&quot; Margin=&quot;5&quot; BackGround-Color=&quot;#8B4513&quot; Border=&quot;1&quot;&gt;
+            &lt;Button Margin=&quot;5&quot; Border=&quot;1&quot;&gt;Inventory&lt;/Button&gt;
+            &lt;Button Margin=&quot;5&quot; Border=&quot;1&quot;&gt;Character&lt;/Button&gt;
+            &lt;Button Margin=&quot;5&quot; Border=&quot;1&quot;&gt;Options&lt;/Button&gt;
+            &lt;Checkbox Margin=&quot;5&quot;&gt;Test checkbox&lt;/Checkbox&gt;
+            &lt;Button Margin=&quot;5&quot; Border=&quot;1&quot;&gt;Quit&lt;/Button&gt;
+        &lt;/Panel&gt;
+
+        &lt;GridPanel Columns=&quot;2&quot; Margin=&quot;5&quot; BackGround-Color=&quot;#8B4513&quot; Border=&quot;1&quot;&gt;
+            &lt;Label Margin=&quot;2&quot;&gt;Name:&lt;/Label&gt;
+            &lt;Label Margin=&quot;2&quot;&gt;Piet&lt;/Label&gt;
+            &lt;Label Margin=&quot;2&quot;&gt;Age:&lt;/Label&gt;
+            &lt;Label Margin=&quot;2&quot;&gt;18&lt;/Label&gt;
+        &lt;/GridPanel&gt;
+
+    &lt;/GridPanel&gt;
+&lt;/GUI&gt;
+</code>
+</pre>
+
+
+
+            <h3 class="w3-text-light-grey">Parent Tags</h3>
+
+            <ul>
+                <li>
+                    <h4 style="color:darkred">GridPanel</h4>
+                    <p>A table which doesn't force change children their width</p>
+                </li>
+
+                <li>
+                    <h4 style="color:darkred">Panel</h4>
+                    <p>A simple container that sets children underneath each other.</p>
+                </li>
+            </ul>
+
+            <h3 class="w3-text-light-grey">Basic Tags</h3>
+
+            <ul>
+                <li>
+                    <h4 style="color:darkred">Label</h4>
+                    <p>A simple piece of text.</p>
+                </li>
+
+                <li>
+                    <h4 style="color:darkred">Button</h4>
+                    <p>A label in a small container that has a event behind it to change state on press.</p>
+                </li>
+
+                <li><h4 style="color:darkred">Checkbox</h4><p>A box with a piece of text that can be set to on or off.</p></li>
+            </ul>
+
+            <!-- End xml Section -->
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+
+        <!-- Api Section -->
+        <div class="w3-padding-64 w3-content w3-text-grey" id="api">
+            <h2 class="w3-text-light-grey">Api</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <!-- End Api Section -->
         </div>
-      </div>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
 
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <img src="/w3images/avatar_g.jpg" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>My Name</b></h4>
-      <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+        <!-- END PAGE CONTENT -->
     </div>
-  </div><hr>
-  
-  <!-- Posts -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16">
-        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Lorem</span><br>
-        <span>Sed mattis nunc</span>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
-      </li> 
-      <li class="w3-padding-16">
-        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
-      </li>   
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
-      </li>  
-    </ul>
-  </div>
-  <hr> 
- 
-  <!-- Labels / tags -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Tags</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
-    </p>
-    </div>
-  </div>
-  
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
 
 </body>
 </html>
